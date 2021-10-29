@@ -16,7 +16,7 @@ class ServidorModelo{
     }
     encenderServidor(){
 
-        this.app.listen(process.env.PUERTO, () => {
+        this.app.listen(process.env.PORT, () => {
             // console.log('Servidor encendido' + process.env.PUERTO);
             console.log(`Servidor encendido ${process.env.PUERTO }`);
         })
