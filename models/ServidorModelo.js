@@ -2,6 +2,7 @@
 const express = require('express')
 const { conectarBD } = require('../db/conexion.js')
 const rutas = require('../routes/rutas')
+const cors = require('cors')
 
 
 class ServidorModelo{
@@ -9,7 +10,7 @@ class ServidorModelo{
     constructor () {
 
         this.app = express()
-        // this.despertarBD()
+        this.despertarBD()
         this.llamarAuxliares()
         this.enrutarPeticiones()
     }
@@ -28,7 +29,7 @@ class ServidorModelo{
 
     llamarAuxliares () {
         this.app.use(express.json())
-
+        this.app.use(cors())
     }
     
 }
